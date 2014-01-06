@@ -1,4 +1,5 @@
 beforeEach(function() {
+  'use strict';
   this.addMatchers({
     toHaveBeenCalledOnce: toHaveBeenCalledN(1),
     toHaveBeenCalledTwice: toHaveBeenCalledN(2),
@@ -34,6 +35,8 @@ beforeEach(function() {
 
   function toHaveBeenCalledNTimesWith(n) {
     return function() {
+      var self = this;
+
       var expectedArgs = jasmine.util.argsToArray(arguments);
 
       if (n == null)
@@ -44,23 +47,23 @@ beforeEach(function() {
       }
 
       var foundCount = this.actual.argsForCall.reduce(function (count, args) {
-        if (this.equals_(args, expectedArgs))
+        if (self.env.equals_(args, expectedArgs))
           count += 1;
 
         return count;
-      }, 0, this);
+      }, 0);
 
       this.message = function() {
         return [
-          'Expected spy ' + this.actual.identity + ' to have been called with ' +
-            jasmine.pp(expectedArgs) + ' ' + n + ' time(s) but it was called ' + foundCount + 'time(s).' +
-            this.actual.identity + 'called ' + n + ' times(s) with: ' + jasmine.pp(this.actual.argsForCall) + '.',
+          'Expected spy ' + this.actual.identity + ' to have been found with ' +
+            jasmine.pp(expectedArgs) + ' ' + n + ' time(s) but it was found ' + foundCount + ' time(s).\n\n' +
+            'Spy '+ this.actual.identity + ' call listing:\n' + jasmine.pp(this.actual.argsForCall) + '.',
           'Expected spy ' + this.actual.identity + ' not to have been called with ' +
             jasmine.pp(expectedArgs) + ' ' + n + ' time(s) but it was.'
         ];
       };
 
-      return this.actual.callCount === n && foundCount === n;
-    }
+      return foundCount === n;
+    };
   }
 });
