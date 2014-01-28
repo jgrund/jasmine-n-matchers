@@ -1,0 +1,25 @@
+{
+  "name": "jasmine-n-matchers",
+  "version": "0.0.3",
+  "description": "A set of matchers to assert a spy was called n times",
+  "main": "jasmine-n-matchers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jgrund/jasmine-n-matchers.git"
+  },
+  "keywords": [
+    "jasmine",
+    "matchers",
+    "assert",
+    "spy"
+  ],
+  "author": "Joe Grund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgrund/jasmine-n-matchers/issues"
+  },
+  "homepage": "https://github.com/jgrund/jasmine-n-matchers"
+}
