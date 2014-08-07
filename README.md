@@ -3,6 +3,7 @@ jasmine-n-matchers
 
 A set of matchers to assert a spy was called n times
 
+The 2.0.0 release supports Jasmine 2.0. Everything earlier is for Jasmine 1.3.
 
 ## Usage
 
