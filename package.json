@@ -1,6 +1,6 @@
 {
   "name": "jasmine-n-matchers",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A set of matchers to assert a spy was called n times",
   "main": "jasmine-n-matchers.js",
   "repository": {

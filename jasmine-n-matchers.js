@@ -69,7 +69,7 @@ beforeEach(function () {
 
           var allActualArgs = actual.calls.allArgs();
           var foundCount = allActualArgs.reduce(function (count, args) {
-            if (util.equals(args, expectedArgs), customEqualityTesters)
+            if (util.equals(args, expectedArgs, customEqualityTesters))
               count += 1;
 
             return count;
